@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Magical Isotope Effect</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.10.0/css/lightbox.min.css">
+</head>
+<body>
+  <section class="section" id="projects">
+    <div class="container">
+
+      <div class="row">
+        <div class="col-lg-3">
+          <div class="section-heading">
+            <h6>Our Projects</h6>
+            <h2>Some of our latest projects</h2>
+          </div>
+          <div class="filters">
+            <ul>
+              <li class="active" data-filter="*">All</li>
+              <li data-filter=".des">Web Design</li>
+              <li data-filter=".dev">Web Development</li>
+              <li data-filter=".gra">Graphics</li>
+              <li data-filter=".tsh">Artworks</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-9">
+          <div class="filters-content">
+            <div class="row grid">
+
+              <div class="col-md-4 all des">
+                <div class="item">
+                  <a href="imgs/project-big-item-01.jpg" data-lightbox="image-1" data-title="Our Projects">
+                    <img src="imgs/project-big-item-01.jpg" alt="">
+                  </a>
+                </div>
+              </div>
+
+              <div class="col-md-4 all dev">
+                <div class="item">
+                  <a href="imgs/project-big-item-01.jpg" data-lightbox="image-1" data-title="Our Projects">
+                    <img src="imgs/project-big-item-01.jpg" alt="">
+                  </a>
+                </div>
+              </div>
+
+              <div class="col-md-4 all gra">
+                <div class="item">
+                  <a href="imgs/project-big-item-03.jpg" data-lightbox="image-1" data-title="Our Projects">
+                    <img src="imgs/project-big-item-03.jpg" alt="">
+                  </a>
+                </div>
+              </div>
+
+              <div class="col-md-4 all tsh">
+                <div class="item">
+                  <a href="imgs/project-big-item-04.jpg" data-lightbox="image-1" data-title="Our Projects">
+                    <img src="imgs/project-big-item-04.jpg" alt="">
+                  </a>
+                </div>
+              </div>
+
+              <div class="col-md-4 all dev">
+                <div class="item">
+                  <a href="imgs/project-big-item-05.jpg" data-lightbox="image-1" data-title="Our Projects">
+                    <img src="imgs/project-big-item-05.jpg" alt="">
+                  </a>
+                </div>
+              </div>
+
+              <div class="col-md-4 all des">
+                <div class="item">
+                  <a href="imgs/project-big-item-06.jpg" data-lightbox="image-1" data-title="Our Projects">
+                    <img src="imgs/project-big-item-06.jpg" alt="">
+                  </a>
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.10.0/js/lightbox.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"></script>
+
+
+  <script>
+    (function($){
+      "use strict";
+      $('.filters ul li').click(function(){
+        $('.filters ul li').removeClass('active');
+        $(this).addClass('active');
+        var data = $(this).attr('data-filter');
+        $grid.isotope({
+          filter:data
+        })
+      });
+
+      var $grid = $(".grid").isotope({
+        itemSelector: ".all",
+        percentPosition: true,
+        masonry:{
+          columnWidth: ".all"
+        }
+      })
+    })(window.jQuery);
+  </script>
+
+</body>
+</html>
